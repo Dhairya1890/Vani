@@ -1,6 +1,6 @@
 # Vāṇi - Real-time Conference Translation System
 
-📌 **Problem Statement 7 – Transform the Future of Rural Commerce**
+📌 **Problem Statement 1 – Weave the magic with Groq**
 
 🎯 **Objective**
 Vāṇi addresses the language barrier in rural commerce and education by providing real-time translation services. It enables seamless communication between speakers and attendees who speak different languages, making conferences, classrooms, and business meetings accessible to everyone regardless of their native language.
