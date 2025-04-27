@@ -12,7 +12,6 @@ const FormData = require('form-data');
 require('dotenv').config();
 
 // Groq API configuration
-// const GROQ_API_KEY = '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';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1';
 
 // Middleware
