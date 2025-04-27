@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.room-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.room-code {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 1rem;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.message-section {
+    margin-bottom: 2rem;
+}
+
+.message-history {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+}
+
+#messageList {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.message.speaker {
+    border-left: 4px solid #3498db;
+}
+
+.message.attendee {
+    border-left: 4px solid #2ecc71;
+}
+
+.message.system {
+    border-left: 4px solid #e74c3c;
+    background-color: #fdf3f2;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.sender-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.message-text {
+    color: #333;
+    line-height: 1.4;
+}
+
+.error-message {
+    color: #e74c3c;
+    margin-top: 0.5rem;
+}
+
+.join-section {
+    text-align: center;
+}
+
+.classroom-section {
+    margin-top: 2rem;
+}
+
+.doubt-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.mic-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.mic-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mic-button.recording {
+    background-color: #ff4444;
+    color: white;
+}
+
+.mic-icon {
+    font-size: 24px;
+}
+
+.recording-status {
+    color: #ff4444;
+    margin-top: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recording-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ff4444;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.speaker-info, .attendee-info {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.speaker-info h2, .attendee-info h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.speaker-info .input-group, .attendee-info .input-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.speaker-info input, .attendee-info input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.speaker-info button, .attendee-info button {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.speaker-info button:hover, .attendee-info button:hover {
+    background-color: #218838;
+}
+
+.subtitle-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle-display {
+    min-height: 100px;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.subtitle-text {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.subtitle-text.interim {
+    background-color: #e8e8e8;
+    color: #666;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tts-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.tts-button:hover {
+    background-color: #45a049;
+}
+
+.tts-button.active {
+    background-color: #f44336;
+}
+
+.tts-button.active:hover {
+    background-color: #da190b;
+}
+
+.tts-icon {
+    font-size: 1.2em;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.brand-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin: 0;
+    font-family: 'Cal Sans', sans-serif;
+}
+
+.HowItWorks {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.block-cards-left-1, .block-cards-right-1,
+.block-cards-left-2, .block-cards-right-2 {
+    position: relative;
+    z-index: 1;
+} 

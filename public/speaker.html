@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker - Vani Conference Translation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-header">
+            <img src="logo.png" alt="Vani logo" class="brand-logo">
+            <h1 class="brand-name">Vāṇi</h1>
+        </div>
+        <h2>Speaker Dashboard</h2>
+        
+        <!-- Speaker Info Section -->
+        <div class="speaker-info">
+            <div class="input-group">
+                <input type="text" id="speakerName" placeholder="Enter your name" required>
+                <input type="text" id="sessionName" placeholder="Enter session name" required>
+                <button onclick="saveSpeakerInfo()">Save</button>
+            </div>
+        </div>
+
+        <div class="room-info">
+            <h2>Your Session Code:</h2>
+            <div id="roomCode" class="room-code">Waiting...</div>
+        </div>
+
+        <!-- Subtitle Display Section -->
+        <div class="subtitle-section">
+            <h2>Live Subtitles</h2>
+            <div id="subtitleDisplay" class="subtitle-display"></div>
+        </div>
+
+        <div class="message-section">
+            <h2>Send Message to Attendees</h2>
+            <div class="input-group">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+                <button id="micButton" onclick="toggleRecording()" class="mic-button">
+                    <span class="mic-icon">🎤</span>
+                </button>
+            </div>
+            <div id="recordingStatus" class="recording-status" style="display: none;">
+                Recording... <span class="recording-dot"></span>
+            </div>
+        </div>
+        <div class="message-history">
+            <h2>Message History</h2>
+            <div id="messageList"></div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="speaker.js"></script>
+</body>
+</html> 
