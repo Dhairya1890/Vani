@@ -5,7 +5,7 @@ require('dotenv').config();
 console.log("API Key loaded:", process.env.GROQ_API_KEY ? 'Yes' : 'No');
 
 // Groq API configuration
-const GROQ_API_KEY = process.env.GROQ_API_KEY || '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';
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // Available languages for translation
