@@ -18,7 +18,7 @@ Vāṇi addresses the language barrier in International conferrences by providin
 
 🛠️ **Tech Stack**
 **Core Technologies Used:**
-- Frontend: HTML, CSS, JavaScript
+- Frontend: HTML, CSS, JavaScript, Material UI
 - Backend: Node.js, Express.js
 - Real-time Communication: Socket.IO
 - APIs: Groq API for translation
